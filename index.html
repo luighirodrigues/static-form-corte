@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>Pré-inscrição</title>
 </head>
 <body>
     <div class="container">
         <!-- code here -->
         <div class="card">
             <div class="card-image">	
-                <h2 class="card-heading">
-                    Laboratorio
-                    <small>Codigo-Secreto</small>
-                </h2>
+                
             </div>
-            <form method="POST" action="https://n8n.ltechbrasil.com.br/webhook-test/2ceee3a7-5446-4f52-8374-9bbb4962e6c1" class="card-form">
+            <form id="form" class="card-form">
                 <div class="input">
                     <input name="nome" type="text" class="input-field" required/>
                     <label class="input-label">Nome completo</label>
@@ -27,16 +24,40 @@
                 </div>
                 <div class="input">
                     <input name="instagram" type="text" class="input-field" required/>
-                    <label class="input-label">Instagram @</label>
+                    <label class="input-label">Seu @ no Instagram</label>
                 </div>
                 <div class="action">
-                    <button type="submit" class="action-button">Se inscrever</button>
+                    <button type="submit" class="action-button">Realizar Pré-Inscrição</button>
                 </div>
             </form>
             <div class="card-info">
-                <p>Ao se inscrever voce ira receber uma confirmacao no whatsapp, se nao receber, seu numero esta incorreto.</p>
+                <p>Ao finalizar o cadastro, você aceita receber uma mensagem de confirmação no seu Whatsapp.</p>
             </div>
         </div>
     </div>    
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio tradicional do formulário
+        
+            const formData = new FormData(this);
+        
+            fetch('https://n8n.ltechbrasil.com.br/webhook/preinscricao', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redireciona após o envio bem-sucedido
+                    window.location.href = '/sucesso.html';
+                } else {
+                    alert('Erro ao enviar o formulário, tente novamente.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao conectar ao servidor, tente mais tarde.');
+            });
+        });
+    </script>
 </body>
 </html>

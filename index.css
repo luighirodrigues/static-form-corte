@@ -39,9 +39,9 @@ input {
 	border-radius: 8px;
 	overflow: hidden;
 	padding-bottom: 65%;
-	background-image: url('https://assets.codepen.io/285131/coffee_1.jpg');
+	background-image: url('./fundo.jpg');
 	background-repeat: no-repeat;
-	background-size: 150%;
+	background-size: 100%;
 	background-position: 0 5%;
 	position: relative;
 }
