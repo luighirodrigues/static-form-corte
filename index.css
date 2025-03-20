@@ -1,0 +1,12 @@
+* {
+    font-family: 'Exo', sans-serif;
+    font-weight: 600; /* ExtraBold */
+}
+
+body {
+    background-color: rgb(33 33 33);
+}
+
+.container {
+    text-align: center;
+}
