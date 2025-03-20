@@ -16,21 +16,21 @@
                     <small>Codigo-Secreto</small>
                 </h2>
             </div>
-            <form class="card-form">
+            <form method="POST" action="https://n8n.ltechbrasil.com.br/webhook-test/2ceee3a7-5446-4f52-8374-9bbb4962e6c1" class="card-form">
                 <div class="input">
-                    <input type="text" class="input-field" required/>
+                    <input name="nome" type="text" class="input-field" required/>
                     <label class="input-label">Nome completo</label>
                 </div>
                             <div class="input">
-                    <input type="text" class="input-field" value="" required/>
+                    <input  name="celular" type="text" class="input-field" value="" required/>
                     <label class="input-label">Celular com DDD</label>
                 </div>
                 <div class="input">
-                    <input type="text" class="input-field" required/>
+                    <input name="instagram" type="text" class="input-field" required/>
                     <label class="input-label">Instagram @</label>
                 </div>
                 <div class="action">
-                    <button class="action-button">Se inscrever</button>
+                    <button type="submit" class="action-button">Se inscrever</button>
                 </div>
             </form>
             <div class="card-info">
